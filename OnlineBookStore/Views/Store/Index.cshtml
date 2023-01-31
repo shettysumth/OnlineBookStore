@@ -1,0 +1,38 @@
+﻿@model  IEnumerable<OnlineBookStore.Models.Book>
+@{
+    ViewData["Title"] = "Store";
+}
+
+    <style>
+        #bg{
+            background-image:url(/images/store.jpg);
+              
+            background-size:cover;
+        }
+    </style>
+
+<div id="bg">
+
+<h2 class="my-4">Store</h2>
+
+<div class="row">
+    @foreach(var book in Model)
+    {
+        <div class="col-2">
+            <div class="card">
+                <a  asp-action="Details" asp-route-id="@book.Id">
+                    <img src="@book.ImageUrl" class="card-img-top">
+                    <div class="card-body" style="height:6em;">
+                        <h5 class="mb-3">@book.Title</h5>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-text">@book.Price.ToString("c")</span>
+                        <a asp-controller="" asp-action="" asp-route-id="@book.Id" class="btn btn-primary float-right"><i class="fa-solid fa-cart-plus"></i></a>
+                    </div>
+                 </a>
+           </div>
+     </div>
+    }
+   <input type="button" id="btn" value="Login/Register" onclick="location.href='@Url.Action("Register", "Accounts")'" />
+</div>
+</div>

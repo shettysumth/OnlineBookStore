@@ -1,0 +1,78 @@
+﻿@model OnlineBookStore.Models.Book
+@{
+    ViewData["Title"] = "Details";
+}
+   <style>
+        #bg{
+            background-image:url(/images/store.jpg);
+              
+            background-size:cover;
+        }
+        #text{color:floralwhite}
+    </style>
+
+<div id="bg">
+<h1>Details</h1>
+<div class="row">
+    <div class="col-5">
+    <div id="text">
+
+         <h4>Book</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Langauge)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Langauge)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.ISBN)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.ISBN)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.DateOfPublish)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.DateOfPublish)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+      
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></a> |
+    <a asp-action="Index"class="btn btn-primary">Back to List</a>
+</div>
+
+    </div>
+    <div class="col-3">
+    <img src="@Model.ImageUrl" class="w-100" />
+    </div>
+</div>
+</div>
